@@ -49,7 +49,7 @@ void process(int n){
     print_matrix(starting_matrix);
     std::cout<<"\n";
     matrix final_matrix=starting_matrix;
-    std::cout<<"previous matrix to the boolean power of "<<n<<":\n";
+    std::cout<<"that matrix to the boolean power of "<<n<<":\n";
     for(int i=1;i<n;i++){
         final_matrix=Matrix_multiplier(starting_matrix,final_matrix);
         reduce(final_matrix);
