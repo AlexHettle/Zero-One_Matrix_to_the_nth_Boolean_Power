@@ -5,6 +5,7 @@
 #include <limits>
 #include <string>
 using matrix = std::vector<std::vector<int>>;
+//simply prints out a vector
 void print_matrix(matrix vec){
     for(auto line:vec){
             std::cout<<"\t";
@@ -15,6 +16,7 @@ void print_matrix(matrix vec){
     }
     std::cout<<"\n";
 }
+//multiplies two 5X5 matrices together
 matrix Matrix_multiplier(matrix v1,matrix v2){
     matrix finished_matrix(5, std::vector<int>(5,0));
     for (int i = 0; i<5; i++){
@@ -25,6 +27,8 @@ matrix Matrix_multiplier(matrix v1,matrix v2){
     }
     return finished_matrix;
 }
+//Creates a randomly-generated 5X5 boolean matrix
+//(matrices containing only 1's and 0's)
 matrix Matrix_creator(){
     std::vector<std::vector<int>> v(5, std::vector<int>(5,0));
     for(auto &line:v){
@@ -34,6 +38,8 @@ matrix Matrix_creator(){
     }
     return v;
 }
+//used to reduce the contents of the matrix in order
+//for it to keep its boolean property
 void reduce(matrix &new_matrix){
     for(auto &line:new_matrix){
         for(int &i:line){
@@ -43,6 +49,8 @@ void reduce(matrix &new_matrix){
         }
     }
 }
+//function that goes through creating the matrix and finding
+//its boolean power
 void process(int n){
     matrix starting_matrix=Matrix_creator();
     std::cout<<"Randomly generated zero-one matrix:\n";
@@ -56,6 +64,7 @@ void process(int n){
     }
     print_matrix(final_matrix);
 }
+//takes in user input to find out what boolean power the user wants their matrix
 void choice(){
     int n;
     srand(time(NULL));
